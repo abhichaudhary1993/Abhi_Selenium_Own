@@ -66,6 +66,31 @@ public class AddOrder {
 				 //Select the customer from dropdownss
 				Select customer_name = new Select(driver.findElement(By.name("seller_company_name")));
 				customer_name.selectByValue("93");
+				
+				driver.findElement(By.xpath("//*[@name='event_venue']")).sendKeys("61 street manhattan");
+				
+				//select time 
+				WebElement event_time = driver.findElement(By.name("event_time"));
+				Actions eve_time = new Actions(driver);
+				eve_time.moveToElement(event_time).click().build().perform();
+				
+				//move to the time 
+				WebElement select_time = driver.findElement(By.xpath("(//*[@class='uk-nav uk-nav-autocomplete uk-autocomplete-results'])[2]/descendant::*/following-sibling::*[5]"));
+				eve_time.click(select_time).build().perform();
+				
+				//Enter number of guest
+				
+				driver.findElement(By.xpath("(//input[@type='text'])[7]")).sendKeys("10");
+				
+				Select Utensils_dropdown = new Select(driver.findElement(By.xpath("itemName[]")));
+				Utensils_dropdown.selectByValue("Napkin");	
+				
+				driver.findElement(By.id("price_1")).sendKeys("20");
+				driver.findElement(By.id("quantity_1"));
+				
+				
+				
+			
 				 
 			
 				
