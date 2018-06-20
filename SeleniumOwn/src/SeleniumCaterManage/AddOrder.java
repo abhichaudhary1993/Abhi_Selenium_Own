@@ -63,7 +63,7 @@ public class AddOrder {
 				 driver.findElement(By.xpath("//*[@class='day']")).click();
 				 driver.findElement(By.name("note")).sendKeys("Sir i want to order some things on your website for party");
 				 
-				 
+				 //Select the customer from dropdownss
 				Select customer_name = new Select(driver.findElement(By.name("seller_company_name")));
 				customer_name.selectByValue("93");
 				 
